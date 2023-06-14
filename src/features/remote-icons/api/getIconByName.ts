@@ -1,3 +1,6 @@
+import axios from 'axios';
+import {z} from 'zod';
+
 import {API_URL} from '../../../config/env';
 import {IconName} from '../types';
 
@@ -8,9 +11,10 @@ import {IconName} from '../types';
  * @returns The SVG icon as a string
  */
 const getIconByName = async (name: IconName) => {
-  const response = await fetch(`${API_URL}/icons/${name}.svg`);
-  const data = await response.text();
-  return data;
+  const response = await axios.get(`${API_URL}/icons/${name}`, {
+    responseType: 'text',
+  });
+  return z.string().parse(response.data);
 };
 
 export default getIconByName;

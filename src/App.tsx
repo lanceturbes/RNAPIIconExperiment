@@ -22,13 +22,18 @@ export default function App(): JSX.Element {
           contentInsetAdjustmentBehavior="automatic"
           style={styles.background}>
           <View style={styles.container}>
-            <Text>Remote Icons</Text>
-            <RemoteIcon fill="white" stroke="blue" size={256} iconName="deno" />
+            <Text style={{color: 'white'}}>Remote Icons</Text>
+            <RemoteIcon
+              fill="orange"
+              stroke="white"
+              size={256}
+              iconName="deno"
+            />
             <RemoteIcon
               fill="white"
               stroke="white"
               size={256}
-              iconName="zelda"
+              iconName="stag"
             />
           </View>
         </ScrollView>
