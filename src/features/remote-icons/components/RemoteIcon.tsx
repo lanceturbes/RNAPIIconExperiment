@@ -1,5 +1,6 @@
 import React from 'react';
 import {Text} from 'react-native';
+import {SvgXml} from 'react-native-svg';
 
 import {RemoteIconProps} from '../types';
 import {useRemoteIconXml} from '../hooks';
@@ -11,12 +12,7 @@ const RemoteIcon = ({fill, stroke, size, iconName}: RemoteIconProps) => {
     return <Text>Something went wrong</Text>;
   }
 
-  return (
-    <div
-      style={{width: size, height: size, fill, stroke}}
-      dangerouslySetInnerHTML={{__html: xml.substring(xml.indexOf('<svg'))}}
-    />
-  );
+  return <SvgXml xml={xml} width={size} height={size} />;
 };
 
 export default RemoteIcon;
