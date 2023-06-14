@@ -24,6 +24,12 @@ export default function App(): JSX.Element {
           <View style={styles.container}>
             <Text>Remote Icons</Text>
             <RemoteIcon fill="white" stroke="blue" size={256} iconName="deno" />
+            <RemoteIcon
+              fill="white"
+              stroke="white"
+              size={256}
+              iconName="zelda"
+            />
           </View>
         </ScrollView>
       </SafeAreaView>

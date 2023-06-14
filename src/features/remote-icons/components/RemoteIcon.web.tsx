@@ -12,10 +12,12 @@ const RemoteIcon = ({fill, stroke, size, iconName}: RemoteIconProps) => {
   }
 
   return (
-    <div
-      style={{width: size, height: size, fill, stroke}}
-      dangerouslySetInnerHTML={{__html: xml.substring(xml.indexOf('<svg'))}}
-    />
+    <div style={{width: size, height: size}}>
+      <div
+        style={{fill, stroke}}
+        dangerouslySetInnerHTML={{__html: xml.substring(xml.indexOf('<svg'))}}
+      />
+    </div>
   );
 };
 
